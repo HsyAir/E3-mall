@@ -23,8 +23,8 @@ public class ItemController {
     @ResponseBody
     public TbItem getItemById( @PathVariable Long itemId){
 
-        TbItem tbItem = itemService.getItemById(itemId);
+        TbItem Item = itemService.getItemById(itemId);
 
-        return tbItem;
+        return Item;
     }
 }
