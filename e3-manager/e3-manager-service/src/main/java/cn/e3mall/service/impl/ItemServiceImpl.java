@@ -19,6 +19,6 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public TbItem getItemById(long id) {
         return tbItemMapper.selectByPrimaryKey(id);
-
+//hh
     }
 }
