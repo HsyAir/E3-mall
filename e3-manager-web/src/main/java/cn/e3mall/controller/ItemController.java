@@ -1,5 +1,6 @@
 package cn.e3mall.controller;
 
+import cn.e3mall.common.pojo.DataGridResult;
 import cn.e3mall.pojo.TbItem;
 import cn.e3mall.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,8 +24,17 @@ public class ItemController {
     @ResponseBody
     public TbItem getItemById(@PathVariable Long itemId){
 
-        TbItem Item = itemService.getItemById(itemId);
+        TbItem tbItem = itemService.getItemById(itemId);
 
-        return Item;
+        return tbItem;
+    }
+
+    @RequestMapping("/item/list")
+    @ResponseBody
+    public DataGridResult getItemList(int page, int rows){
+
+        DataGridResult itemList = itemService.getItemList(page, rows);
+
+        return itemList;
     }
 }
