@@ -30,7 +30,7 @@ public class ItemServiceImpl implements ItemService {
     @Override
     public DataGridResult getItemList(int page, int rows) {
 //        1）设置分页条件
-        PageHelper.startPage(page,rows);
+        PageHelper.startPage(page, rows);
 //        2）执行查询
         TbItemExample tbItemExample = new TbItemExample();
         List<TbItem> tbItemList = tbItemMapper.selectByExample(tbItemExample);
@@ -40,14 +40,11 @@ public class ItemServiceImpl implements ItemService {
 //        4）创建一个DataGridResult对象
         DataGridResult dataGridResult = new DataGridResult();
 //        5）设置属性
-        dataGridResult.setTotal((int)total);
+        dataGridResult.setTotal((int) total);
         dataGridResult.setRows(tbItemList);
 //        6）返回结果
 
         return dataGridResult;
     }
-
-
-
 
 }

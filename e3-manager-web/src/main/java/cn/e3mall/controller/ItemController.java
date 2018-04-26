@@ -3,6 +3,7 @@ package cn.e3mall.controller;
 import cn.e3mall.common.pojo.DataGridResult;
 import cn.e3mall.pojo.TbItem;
 import cn.e3mall.service.ItemService;
+import com.sun.org.apache.xpath.internal.operations.String;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -22,7 +23,7 @@ public class ItemController {
 
     @RequestMapping("/item/{itemId}")
     @ResponseBody
-    public TbItem getItemById(@PathVariable Long itemId){
+    public TbItem getItemById(@PathVariable Long itemId) {
 
         TbItem tbItem = itemService.getItemById(itemId);
 
@@ -31,10 +32,9 @@ public class ItemController {
 
     @RequestMapping("/item/list")
     @ResponseBody
-    public DataGridResult getItemList(int page, int rows){
+    public DataGridResult getItemList(int page, int rows) {
 
         DataGridResult itemList = itemService.getItemList(page, rows);
-
         return itemList;
     }
 }
