@@ -1,9 +1,9 @@
 package cn.e3mall.controller;
 
 import cn.e3mall.common.pojo.DataGridResult;
+import cn.e3mall.common.pojo.E3Result;
 import cn.e3mall.pojo.TbItem;
 import cn.e3mall.service.ItemService;
-import com.sun.org.apache.xpath.internal.operations.String;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -37,4 +37,14 @@ public class ItemController {
         DataGridResult itemList = itemService.getItemList(page, rows);
         return itemList;
     }
+
+    @RequestMapping("/item/save")
+    @ResponseBody
+    public E3Result addItem(TbItem tbItem,String desc){
+        E3Result e3Result = itemService.addItem(tbItem, desc);
+
+        return e3Result;
+
+    }
+
 }
