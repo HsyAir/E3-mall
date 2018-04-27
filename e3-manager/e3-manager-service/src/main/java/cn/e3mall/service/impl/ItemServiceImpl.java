@@ -58,8 +58,9 @@ public class ItemServiceImpl implements ItemService {
     public E3Result addItem(TbItem tbItem, String desc) {
 //        1）生成商品id
         long itemId = IDUtils.genItemId();
+        //System.out.println(itemId);
 //        2）补全item对象的属性
-        tbItem.setCid(itemId);
+        tbItem.setId(itemId);
         //1-正常，2-下架，3-删除
         tbItem.setStatus((byte)1);
         tbItem.setCreated(new Date());
